@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md"></div>
+    <div class="col-md-6">
+
+      <div class="form-container">
+        <form [formGroup]="nodeMailerForm" (ngSubmit)="sendMail()" >
+          <mat-form-field appearance="outline">
+            <mat-label>Enter your name:</mat-label>
+            <input matInput placeholder="provide full name here" formControlName="name" type="text">
+           </mat-form-field>
+          <br>
+          <mat-form-field appearance="outline">
+            <mat-label>Enter the email id you wish to send mail to:</mat-label>
+            <input matInput #email placeholder="provide email here" formControlName="email" type="email">
+           </mat-form-field>
+          <br>
+          <mat-form-field appearance="outline">
+            <mat-label>Enter the Width:</mat-label>
+            <input matInput placeholder="provide width" formControlName="width" type="text">
+           </mat-form-field>
+          <br>
+          <mat-form-field appearance="outline">
+            <mat-label>Enter the Height:</mat-label>
+            <input matInput placeholder="provide height" formControlName="height" type="text">
+           </mat-form-field>
+          <br>
+          <mat-form-field appearance="outline">
+            <mat-label>Enter the design:</mat-label>
+            <input matInput placeholder="provide design name" formControlName="design" type="text">
+           </mat-form-field>
+          <br>
+          <mat-form-field appearance="outline">
+            <mat-label>Enter the material</mat-label>
+            <input matInput placeholder="provide material" formControlName="material" type="text">
+           </mat-form-field>
+          <br>
+
+
+          <!-- This will have the drop down icons for the design type -->
+          <mat-form-field appearance="outline">
+            <mat-label>design selection</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let designIcon of designIcons" [value]="designIcon.value">
+                <img src='{{designIcon.img}}'> {{designIcon.viewValue}}
+              </mat-option>
+            </mat-select>
+           </mat-form-field>
+          <br>
+    
+       <button  mat-raised-button color="accent" type="submit"material [disabled]="!nodeMailerForm.valid" >Click Me</button>
+      </form>
+      </div>
+    
+
+
+    </div>
+
+    <div class="col-md"></div>
+
+  </div>
+</div>
+

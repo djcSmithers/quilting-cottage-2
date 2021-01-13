@@ -1,0 +1,110 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form class="border">
+                 <div class="">  
+                 <div class="form-group m-5"> 
+                  <label for="quiltWidth">Width</label>
+                  <input type="number" class="form-control" id="quiltWidth" aria-describedby="" placeholder="Enter width">
+                </div>
+                <div class="form-group m-5">
+                  <label for="quiltHeight">Height</label>
+                  <input type="number" class="form-control" id="quiltHeight" placeholder="Enter Height">
+                </div></div>
+             
+
+                <!-- selection radio buttons, Price per square inch -->
+                <div class="radioGroup" [(ngModel)]="sqInModel" [ngModelOptions]="{standalone: true}" name="sqRadio" ngDefaultControl>
+                <div class="form-check mx-5" >
+                    <div class="desc font-weight-bold"> Pattern Difficulty: </div>
+                    <input class="form-check-input" type="radio" name="patternRadios"  id="patternRadio1"  value=".015" >
+                    <label class="form-check-label" for="patternRadios1">
+                     Simple ($0.015 per sq/in) 
+                    </label>
+                </div>
+
+               
+                <div class="form-check mx-5">
+                    <input class="form-check-input" type="radio" name="patternRadios"  id="patternRadio2" ng-model="myRadio" value=".025">
+                    <label class="form-check-label" for="patternRadios2">
+                     Medium ($0.025 per sq/in)
+                    </label>
+                </div>
+                <div class="form-check mx-5">
+                    <input class="form-check-input" type="radio" name="patternRadios" id="patternRadio3"  ng-model="myRadio" value=".035" >
+                    <label class="form-check-label" for="patternRadios3">
+                     Hard ($0.035 per sq/in)
+                    </label>
+                </div>
+                
+
+</div>
+                <!-- minimum charge is $45 -->
+                <!-- custom minimum charge $125 -->
+
+                <!-- Cost of thread 
+                the size of quilt will end up being the size of thread, 
+            
+                    Baby and Lap ................................  $4.00
+
+                    Twin ........................................  $6.00
+
+                    Queen .......................................  $8.00
+
+                    King ........................................  $10.00
+                -->
+                
+                <!-- Batting options -->
+                <div class="battingRadios mx-5"> 
+                    <div class="desc font-weight-bold"> Batting Options: </div>
+                    
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="battingRadios" id="battingRadios1" value="option1" checked>
+                    <label class="form-check-label" for="battingRadios1">
+                     Option 1($10/yd)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="battingRadios" id="battingRadios2" value="option2">
+                    <label class="form-check-label" for="battingRadios2">
+                     Option 2 ($15/yd)
+                    </label>
+                </div>
+                </div>
+
+                <div class="bindingRadios mx-5">
+                    <div class="desc font-weight-bold"> Binding Options: </div>
+                <div class="form-check">
+                    
+                    <input class="form-check-input" type="radio" name="bindingRadios" id="bindingRadios1" value="option1" checked>
+                    <label class="form-check-label" for="bindingRadios1">
+                     Option 1
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="bindingRadios" id="bindingRadios2" value="option2">
+                    <label class="form-check-label" for="bindingRadios2">
+                     Option 2
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="bindingRadios" id="bindingRadios2" value="option2">
+                    <label class="form-check-label" for="bindingRadios2">
+                     Option 3
+                    </label>
+                </div>
+</div>
+               
+                <button (click)="hello()" type="button" class="btn btn-primary mx-5 m-5" >Submit</button>
+                
+              </form>
+
+              {{sqInModel}}
+
+<div class="output" id="out"></div>
+
+        </div>
+    </div>
+</div>
