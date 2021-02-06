@@ -29,6 +29,7 @@ export class CottageEmailComponent implements OnInit {
   constructor(private formBuilder:FormBuilder,private emailService:EmailService) { }
 
   ngOnInit(): void {
+
     // this.nodeMailerForm = this.formBuilder.group({email:[null,[Validators.required]]
 
     this.nodeMailerForm = new FormGroup({
@@ -43,6 +44,8 @@ export class CottageEmailComponent implements OnInit {
 
     };
 
+
+   
 
 
   sendMail(){

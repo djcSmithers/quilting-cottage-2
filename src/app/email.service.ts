@@ -23,4 +23,14 @@ export class EmailService {
     return this.httpreq.post("http://localhost:3000/email",jsonBody,headers);
   }
 }
+
+getFiles(){
+
+  let headers = {
+    headers : new HttpHeaders({ 'Content-Type' : 'application/json'})};
+
+  console.log("calling files route...");
+  return this.httpreq.get("http://localhost:3000/files", headers);
+}
+
 }

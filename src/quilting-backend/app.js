@@ -8,6 +8,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var emailRouter = require('./routes/emailRouter');
 
+let filesRouter = require('./routes/files'); //import route to files.js
+
 var app = express();
 
 // view engine setup
@@ -23,6 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/email',emailRouter);
+
+app.use('/files', filesRouter); //Use route to files.js
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
